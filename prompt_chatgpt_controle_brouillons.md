@@ -16,8 +16,10 @@ pièce jointe par OCR (numérisation).
 Environ 107 justificatifs sont en cours d'envoi depuis le 13/10/2026 ; il s'agit d'une reprise de
 l'historique de février à octobre 2026. Chaque e-mail a pour objet :
 `Justificatif AAAA-MM-JJ_FOURNISSEUR_MONTANTE.ext`.
-Exemple : `Justificatif 2026-04-20_HELLOASSO-SOLTENA_35.5E.pdf`, c'est-à-dire la date de la pièce,
+Exemple : `Justificatif 2026-04-20_HELLOASSO-SOLTENA_35,5E.pdf`, c'est-à-dire la date de la pièce,
 le nom du fournisseur et le montant TTC.
+Le séparateur décimal du montant est une virgule. Les tout premiers envois utilisent encore un point
+(par exemple `46.98E`) : les deux notations désignent le même montant.
 Cet objet est la référence de contrôle saisie au moment de l'enregistrement de la dépense.
 
 Problèmes déjà constatés sur les premiers brouillons :
