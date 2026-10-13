@@ -15,9 +15,17 @@ bancaires. Il ne contient aucune pièce comptable ni aucune donnée personnelle.
 
 Boîtes Odoo (alias de journal d'achats) :
 
-- CDL EXPERTISES → `purchases@cdl-expert.odoo.com`
-- CDL EXPERT → `purchases-cdl-expert@cdl-expert.odoo.com`
+- CDL EXPERTISES → `purchases@cdl-expertises.odoo.com` (société n° 1, journal Achats n° 9)
+- CDL EXPERT → `purchases-cdl-expert@cdl-expertises.odoo.com` (société n° 2, journal Achats n° 16)
 - PERSO → aucun envoi
+
+Base Odoo Online : `https://cdl-expertises.odoo.com`. Les anciennes adresses en
+`@cdl-expert.odoo.com` étaient rejetées par Odoo (`550 5.1.2 Unknown host`), car
+aucune base ne porte ce nom. Le 13/10/2026, le domaine d'alias
+`cdl-expertises.odoo.com` a été créé dans Odoo et attribué **uniquement** aux deux
+alias d'achats ; ceux-ci acceptent les courriels de « Tout le monde ». Les autres
+alias, ainsi que les adresses catchall, de rebond et d'expédition, n'ont pas été
+modifiés.
 
 ## Pourquoi Airtable plutôt que Make ou n8n
 
@@ -67,8 +75,12 @@ L'automatisation se déclenche quand **« Envoyer à Odoo » est coché**, que
 - **Envois en double à Welyb** : « Automation 1 » (Outlook, à la création) et le
   scénario Make (Gmail, chaque jour) envoient tous deux chaque justificatif à
   Welyb. Il faut en conserver un seul.
-- Dans « Automation 1 », les adresses Odoo commencent par une espace
-  (`" purchases@…"`). À corriger.
+- « Automation 1 » : adresses Odoo corrigées dans le brouillon (bon domaine, sans
+  l'espace initiale). Il faut publier la mise à jour dans l'interface Airtable pour
+  qu'elle s'applique.
+- Odoo, courriels sortants : le serveur Microsoft configuré échoue (jeton
+  d'accès expiré). Cela n'empêche pas la réception des justificatifs, mais
+  bloque les courriels envoyés par Odoo.
 - Le corps de courriel du scénario Make contient des variables mal mappées
   (`{{28.Date}}{{du}}{{justificatif}}`, `{{28.Montant}}{{(TTC)}}`).
 - RGPD : les pièces ne transitent que par des services déjà utilisés
